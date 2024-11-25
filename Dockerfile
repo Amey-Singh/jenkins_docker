@@ -1,5 +1,9 @@
 FROM openjdk:latest
+
 WORKDIR /app
-COPY HelloWorld.java /app
-RUN javac HelloWorld.java
+
+# Copy the compiled HelloWorld.class file into the container
+COPY HelloWorld.class /app/
+
+# Run the HelloWorld.class file
 CMD ["java", "HelloWorld"]
